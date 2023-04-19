@@ -28,13 +28,13 @@ public class ProductRestControllerApi {
     }
     @PutMapping("/products")
     private Product updateProduct(@RequestBody Product product,@PathVariable long id){
-        return productRepository.findById((long)id)
+        return productRepository.findById(id)
                 .map(p->{
-                    p.setName(product.getName());
-                    p.setPrice(product.getPrice());
+                    p.setName(p.getName());
+                    p.setPrice(p.getPrice());
                     return productRepository.save(p);
                 })
-                .orElseThrow(() -> new IllegalArgumentException("Invalide Id"+id));
+                .orElseThrow(()-> new IllegalArgumentException("Invalide Id :"+id));
     }
     @DeleteMapping("/products")
     private void deleProduct(@PathVariable long id){
