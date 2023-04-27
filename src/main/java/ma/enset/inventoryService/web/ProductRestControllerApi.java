@@ -1,16 +1,11 @@
 package ma.enset.inventoryService.web;
-
-import jakarta.ws.rs.Path;
 import ma.enset.inventoryService.entity.Product;
 import ma.enset.inventoryService.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
-
 @RestController
-@RequestMapping("/api")
 public class ProductRestControllerApi {
     @Autowired
     private ProductRepository productRepository;
